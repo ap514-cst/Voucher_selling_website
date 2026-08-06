@@ -1,0 +1,11 @@
+/* src/index.css */
+@tailwind base;     /* Tailwind এর বেস স্টাইল */
+@tailwind components; /* Tailwind এর কম্পোনেন্ট ক্লাস */
+@tailwind utilities;  /* Tailwind এর ইউটিলিটি ক্লাস */
+
+/* আপনার কাস্টম CSS এখানে যোগ করতে পারেন */
+@layer base {
+  body {
+    @apply bg-white dark:bg-gray-900;
+  }
+}
