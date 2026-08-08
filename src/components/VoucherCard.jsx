@@ -60,7 +60,7 @@ const VoucherCard = ({ voucher = {}, index = 0 }) => {
           <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-xl bg-slate-900/80 p-2.5 border border-slate-700/80 flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform duration-300">
             <img
               src={logoMap[logo?.toLowerCase()] || logoMap.aws}
-              alt={shortName}
+              alt={`${shortName} certification exam voucher - Techcyfy`}
               className="w-full h-full object-contain"
               loading="lazy"
             />

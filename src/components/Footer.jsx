@@ -55,39 +55,12 @@ const Footer = () => {
 
   return (
     <footer className="bg-black text-white border-t border-slate-800">
-      <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
+ 
         
         {/* ===== TRUSTED BY SECTION ===== */}
-        <div className="text-center mb-10">
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white">
-            Trusted by <span className="text-amber-400">thousands</span> of happy customers
-          </h3>
-        </div>
+        
 
-        {/* ===== REVIEW CARDS ===== */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-12">
-          {reviews.map((review, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: review.delay }}
-              viewport={{ once: true }}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="bg-slate-800/40 backdrop-blur-sm rounded-2xl p-5 md:p-6 border border-slate-700/50 hover:border-amber-500/30 transition-all duration-300"
-            >
-              <div className="flex items-start justify-between mb-2">
-                <h4 className="text-sm md:text-base font-bold text-white">
-                  {review.name}
-                </h4>
-                <StarRating rating={review.rating} />
-              </div>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                "{review.text}"
-              </p>
-            </motion.div>
-          ))}
-        </div>
+       
 
         {/* ===== DIVIDER ===== */}
         <div className="border-t border-slate-800 pt-8 md:pt-10">
@@ -125,7 +98,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-      </div>
+     
     </footer>
   );
 };
