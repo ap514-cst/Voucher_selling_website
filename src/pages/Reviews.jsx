@@ -1,8 +1,15 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import { FaSearch, FaWhatsapp, FaEnvelope, FaStar, FaStarHalfAlt } from "react-icons/fa";
-import SEO from "../components/SEO";
+import ReviewSystem from '../components/ReviewSystem';
+import BreadcrumbSchema from "../components/BreadcrumbSchema";
+import {Helmet} from "react-helmet-async"
 const Reviews = () => {
+
+    const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Reviews", url: "/reviews" }
+  ];
 
   const reviews = [
     {
@@ -31,8 +38,8 @@ const Reviews = () => {
     },
   ];
 
-  const StarRating=({rating})=>{
-    const stars= []
+  const StarRating = ({ rating }) => {
+    const stars = []
     for (let i = 1; i <= 5; i++) {
       if (i <= rating) {
         stars.push(<FaStar key={i} className="text-amber-400" />);
@@ -47,9 +54,15 @@ const Reviews = () => {
   return (
     <>
 
-      <SEO
-      title="Customer Reviews"
-      description="Read what our customers say about Techcyfy. Trusted by thousands of happy professionals worldwide."/>
+      <Helmet>
+        <title>Customer Reviews - Techcyfy</title>
+        <meta name="description" content="Read what our customers say about Techcyfy. Share your experience and help others choose the best IT certification vouchers." />
+        <link rel="canonical" href="http://localhost:5173/reviews" />
+      </Helmet>
+
+      <BreadcrumbSchema items={breadcrumbItems} />
+      <ReviewSystem />
+
 
       <div>
         {/* Header */}

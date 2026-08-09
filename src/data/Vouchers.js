@@ -1,6 +1,7 @@
 // src/data/vouchers.js
 export const vouchersData = [
   {
+    _id: "voucher-1",
     id: 1,
     name: "AWS Certified Solutions Architect - Associate",
     shortName: "AWS Solutions Architect",
@@ -12,8 +13,19 @@ export const vouchersData = [
     discount: 30,
     popular: true,
     instantDelivery: true,
+    description: "AWS Certified Solutions Architect - Associate (SAA-C03) exam voucher. Validate your expertise in designing distributed systems on AWS. Official voucher with instant delivery.",
+    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
+    rating: 4.9,
+    reviewCount: 1245,
+    examDetails: {
+      duration: "130 minutes",
+      questions: 65,
+      passingScore: "72%",
+      languages: ["English", "Japanese", "Korean", "Simplified Chinese"]
+    }
   },
   {
+    _id: "voucher-2",
     id: 2,
     name: "Microsoft Azure Administrator Associate",
     shortName: "Azure Administrator",
@@ -25,8 +37,19 @@ export const vouchersData = [
     discount: 30,
     popular: true,
     instantDelivery: true,
+    description: "Microsoft Azure Administrator Associate (AZ-104) exam voucher. Prove your skills in managing Azure identities, governance, storage, compute and virtual networks.",
+    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
+    rating: 4.8,
+    reviewCount: 980,
+    examDetails: {
+      duration: "150 minutes",
+      questions: 60,
+      passingScore: "70%",
+      languages: ["English", "German", "Spanish", "French"]
+    }
   },
   {
+    _id: "voucher-3",
     id: 3,
     name: "Google Cloud Professional Cloud Architect",
     shortName: "Google Cloud Architect",
@@ -38,8 +61,19 @@ export const vouchersData = [
     discount: 30,
     popular: true,
     instantDelivery: true,
+    description: "Google Cloud Professional Cloud Architect (PCA) exam voucher. Design, develop, and manage robust, secure, scalable, highly available, and dynamic solutions on Google Cloud.",
+    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
+    rating: 4.7,
+    reviewCount: 760,
+    examDetails: {
+      duration: "120 minutes",
+      questions: 55,
+      passingScore: "70%",
+      languages: ["English", "Japanese", "Portuguese"]
+    }
   },
   {
+    _id: "voucher-4",
     id: 4,
     name: "Red Hat Certified System Administrator",
     shortName: "Red Hat System Admin",
@@ -51,8 +85,19 @@ export const vouchersData = [
     discount: 30,
     popular: true,
     instantDelivery: true,
+    description: "Red Hat Certified System Administrator (EX200) exam voucher. Validate your skills in system administration, including installation, configuration, and management of Red Hat Enterprise Linux.",
+    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
+    rating: 4.6,
+    reviewCount: 540,
+    examDetails: {
+      duration: "150 minutes",
+      questions: 50,
+      passingScore: "70%",
+      languages: ["English", "Spanish", "French"]
+    }
   },
   {
+    _id: "voucher-5",
     id: 5,
     name: "CompTIA Security+",
     shortName: "CompTIA Security+",
@@ -64,9 +109,20 @@ export const vouchersData = [
     discount: 30,
     popular: true,
     instantDelivery: true,
+    description: "CompTIA Security+ (SY0-701) exam voucher. Validate your baseline skills in network security, compliance, operational security, and threat management.",
+    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
+    rating: 4.9,
+    reviewCount: 2100,
+    examDetails: {
+      duration: "90 minutes",
+      questions: 90,
+      passingScore: "750/900",
+      languages: ["English", "French", "German", "Spanish"]
+    }
   },
-  // অতিরিক্ত (Load More এ দেখাবে)
+  // ===== ADDITIONAL VOUCHERS =====
   {
+    _id: "voucher-6",
     id: 6,
     name: "Cisco Certified Network Associate",
     shortName: "CCNA",
@@ -78,8 +134,19 @@ export const vouchersData = [
     discount: 30,
     popular: false,
     instantDelivery: true,
+    description: "Cisco Certified Network Associate (CCNA) exam voucher. Validate your skills in network fundamentals, IP connectivity, security fundamentals, and automation.",
+    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
+    rating: 4.7,
+    reviewCount: 890,
+    examDetails: {
+      duration: "120 minutes",
+      questions: 60,
+      passingScore: "80%",
+      languages: ["English", "Japanese", "Spanish"]
+    }
   },
   {
+    _id: "voucher-7",
     id: 7,
     name: "AWS Certified Developer - Associate",
     shortName: "AWS Developer",
@@ -91,8 +158,19 @@ export const vouchersData = [
     discount: 30,
     popular: false,
     instantDelivery: true,
+    description: "AWS Certified Developer - Associate (DVA-C02) exam voucher. Demonstrate your ability to develop, deploy, and debug cloud-based applications on AWS.",
+    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
+    rating: 4.8,
+    reviewCount: 780,
+    examDetails: {
+      duration: "130 minutes",
+      questions: 65,
+      passingScore: "72%",
+      languages: ["English", "Japanese", "Korean"]
+    }
   },
   {
+    _id: "voucher-8",
     id: 8,
     name: "Microsoft Azure Fundamentals",
     shortName: "Azure Fundamentals",
@@ -104,8 +182,19 @@ export const vouchersData = [
     discount: 30,
     popular: false,
     instantDelivery: true,
+    description: "Microsoft Azure Fundamentals (AZ-900) exam voucher. Validate your foundational knowledge of cloud services and how they are provided with Microsoft Azure.",
+    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
+    rating: 4.5,
+    reviewCount: 1500,
+    examDetails: {
+      duration: "60 minutes",
+      questions: 40,
+      passingScore: "70%",
+      languages: ["English", "German", "French", "Spanish"]
+    }
   },
   {
+    _id: "voucher-9",
     id: 9,
     name: "Google Cloud Digital Leader",
     shortName: "Cloud Digital Leader",
@@ -117,8 +206,19 @@ export const vouchersData = [
     discount: 30,
     popular: false,
     instantDelivery: true,
+    description: "Google Cloud Digital Leader exam voucher. Identify your ability to transform businesses with Google Cloud technology and understand cloud architecture.",
+    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
+    rating: 4.6,
+    reviewCount: 620,
+    examDetails: {
+      duration: "120 minutes",
+      questions: 50,
+      passingScore: "70%",
+      languages: ["English", "Japanese", "Spanish"]
+    }
   },
   {
+    _id: "voucher-10",
     id: 10,
     name: "CompTIA Network+",
     shortName: "CompTIA Network+",
@@ -130,5 +230,65 @@ export const vouchersData = [
     discount: 30,
     popular: false,
     instantDelivery: true,
+    description: "CompTIA Network+ (N10-008) exam voucher. Validate your skills in networking concepts, infrastructure, operations, security, and troubleshooting.",
+    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
+    rating: 4.7,
+    reviewCount: 1100,
+    examDetails: {
+      duration: "90 minutes",
+      questions: 90,
+      passingScore: "720/900",
+      languages: ["English", "French", "German"]
+    }
   },
+  // ===== BONUS: SNOWPRO =====
+  {
+    _id: "voucher-11",
+    id: 11,
+    name: "SnowPro Core Certification",
+    shortName: "SnowPro Core",
+    code: "COF-C02",
+    logo: null,
+    category: "Data",
+    officialPrice: 350.00,
+    youPay: 245.00,
+    discount: 30,
+    popular: false,
+    instantDelivery: true,
+    description: "SnowPro Core Certification (COF-C02) exam voucher. Validate your understanding of Snowflake architecture, account management, security, and performance.",
+    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
+    rating: 4.5,
+    reviewCount: 340,
+    examDetails: {
+      duration: "120 minutes",
+      questions: 60,
+      passingScore: "75%",
+      languages: ["English", "Japanese"]
+    }
+  },
+  // ===== BONUS: SALESFORCE =====
+  {
+    _id: "voucher-12",
+    id: 12,
+    name: "Salesforce Certified Administrator",
+    shortName: "Salesforce Admin",
+    code: "ADM-201",
+    logo: null,
+    category: "CRM",
+    officialPrice: 250.00,
+    youPay: 175.00,
+    discount: 30,
+    popular: false,
+    instantDelivery: true,
+    description: "Salesforce Certified Administrator (ADM-201) exam voucher. Validate your skills in Salesforce configuration, automation, and user management.",
+    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
+    rating: 4.4,
+    reviewCount: 450,
+    examDetails: {
+      duration: "120 minutes",
+      questions: 65,
+      passingScore: "65%",
+      languages: ["English", "French", "Spanish"]
+    }
+  }
 ];

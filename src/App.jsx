@@ -11,7 +11,7 @@ import HowItWorks from "./components/HowItWorks"; // ✅ HowItWorks পেজ
 import VoucherSection from "./components/VoucherSection";
 // import VoucherCard from "./components/VoucherCard"; // ❌ সরানো হয়েছে (ব্যবহার নেই)
 // import VoucherSection from "./components/VoucherSection"; // ❌ সরানো হয়েছে (পেজ ব্যবহার করছি)
-
+import VoucherDetails from "./pages/VaoucherDetails"
 // Lazy load pages (code splitting)
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -58,6 +58,7 @@ function App() {
             <Route path="reviews" element={<Reviews />} />
             <Route path="services" element={<Services />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="vouchers/:id" element={<VoucherDetails />} />
           </Route>
         </Routes>
       </Suspense>
