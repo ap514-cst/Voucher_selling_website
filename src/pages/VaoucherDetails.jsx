@@ -8,7 +8,6 @@ import {
   FaBolt,
   FaCloud,
   FaGlobe,
-  FaTags,
   FaArrowLeft,
   FaStar,
   FaShieldAlt,
@@ -17,7 +16,7 @@ import {
   FaListUl,
   FaExternalLinkAlt,
 } from "react-icons/fa";
-import {vouchersData}from "../data/vouchers";
+import { vouchersData } from "../data/vouchers";
 import BreadcrumbSchema from "../components/BreadcrumbSchema";
 import ProductSchema from "../components/ProductSchema";
 
@@ -45,34 +44,12 @@ const VoucherDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log("🔍 Looking for voucher with ID:", id);
-    
-    // ✅ সঠিকভাবে ভাউচার খুঁজুন - সব ধরনের ID চেক করুন
     const found = vouchersData.find((v) => {
-      // _id দিয়ে চেক (স্ট্রিং)
-      if (v._id && v._id === id) {
-        console.log("✅ Found by _id:", v.shortName);
-        return true;
-      }
-      // id দিয়ে চেক (নাম্বার)
-      if (v.id !== undefined && String(v.id) === id) {
-        console.log("✅ Found by id:", v.shortName);
-        return true;
-      }
-      // code দিয়ে চেক (স্ট্রিং)
-      if (v.code && v.code === id) {
-        console.log("✅ Found by code:", v.shortName);
-        return true;
-      }
+      if (v._id && v._id === id) return true;
+      if (v.id !== undefined && String(v.id) === id) return true;
+      if (v.code && v.code === id) return true;
       return false;
     });
-
-    if (found) {
-      console.log("✅ Voucher found:", found.shortName);
-    } else {
-      console.log("❌ No voucher found for ID:", id);
-      console.log("📋 Available IDs:", vouchersData.map(v => ({ _id: v._id, id: v.id, code: v.code, name: v.shortName })));
-    }
 
     setVoucher(found);
     setLoading(false);
@@ -122,7 +99,6 @@ const VoucherDetails = () => {
     instantDelivery,
     category,
     description,
-    examList = [],
   } = voucher;
 
   const whatsappMessage = encodeURIComponent(
