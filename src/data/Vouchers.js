@@ -1,5 +1,5 @@
 // src/data/vouchers.js
-import { examGuides } from "./examData";
+
 
 export const vouchersData = [
   // ========== AWS ==========
@@ -478,3 +478,4 @@ export const vouchersData = [
       "IBM Certified Solution Architect - Cloud v4 exam voucher. Design, plan, and architect secure IBM Cloud solutions.",
   },
 ];
+
