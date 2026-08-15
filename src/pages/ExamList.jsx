@@ -15,7 +15,7 @@ import {
   FaWhatsapp,
   FaTelegramPlane,
 } from "react-icons/fa";
-import { vouchersData } from "../data/vouchers";
+import {vouchersData} from '../data/Vouchers'
 import { getExamGuide } from "../data/examData";
 import BreadcrumbSchema from "../components/BreadcrumbSchema";
 

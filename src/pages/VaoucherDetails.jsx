@@ -16,7 +16,7 @@ import {
   FaListUl,
   FaExternalLinkAlt,
 } from "react-icons/fa";
-import { vouchersData } from "../data/vouchers";
+import { vouchersData } from "../data/Vouchers";
 import BreadcrumbSchema from "../components/BreadcrumbSchema";
 import ProductSchema from "../components/ProductSchema";
 
