@@ -272,7 +272,7 @@ const Home = () => {
                   </motion.a>
 
                   <motion.a
-                    href="https://wa.me/"
+                    href="https://wa.me/+8801982188224"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.02 }}
@@ -284,7 +284,7 @@ const Home = () => {
                   </motion.a>
 
                   <motion.a
-                    href="https://t.me/"
+                    href="https://t.me/techcyfy"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.02 }}

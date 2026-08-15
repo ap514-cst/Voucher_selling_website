@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaStar, FaTrash, FaEdit } from "react-icons/fa";
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://voucher-selling-website-backend-1.onrender.com/api';
 
 const ReviewSystem = () => {
   const [reviews, setReviews] = useState([]);

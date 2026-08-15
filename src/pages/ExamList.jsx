@@ -130,7 +130,7 @@ const ExamList = () => {
         />
         <link
           rel="canonical"
-          href={`https://your-domain.com/vouchers/${id}/exams`}
+          href={`https://techcyfy.com/vouchers/${id}/exams`}
         />
       </Helmet>
 

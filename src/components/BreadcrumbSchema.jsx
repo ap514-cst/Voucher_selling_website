@@ -15,7 +15,7 @@ const BreadcrumbSchema = ({ items }) => {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name || "Home",
-      "item": `https://your-domain.com${item.url || "/"}`
+      "item": `https://techcyfy.com${item.url || "/"}`
     }))
   };
 
