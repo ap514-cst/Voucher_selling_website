@@ -1,5 +1,8 @@
 // src/data/vouchers.js
+import { examGuides } from "./examData";
+
 export const vouchersData = [
+  // ========== AWS ==========
   {
     _id: "voucher-1",
     id: 1,
@@ -8,22 +11,17 @@ export const vouchersData = [
     code: "SAA-C03",
     logo: "aws",
     category: "Cloud",
-    officialPrice: 150.00,
-    youPay: 105.00,
-    discount: 30,
+    officialPrice: 150.0,
+    youPay: 105.0,
+    discount: 60,
     popular: true,
     instantDelivery: true,
-    description: "AWS Certified Solutions Architect - Associate (SAA-C03) exam voucher. Validate your expertise in designing distributed systems on AWS. Official voucher with instant delivery.",
-    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
-    rating: 4.9,
-    reviewCount: 1245,
-    examDetails: {
-      duration: "130 minutes",
-      questions: 65,
-      passingScore: "72%",
-      languages: ["English", "Japanese", "Korean", "Simplified Chinese"]
-    }
+    guideId: "aws",
+    description:
+      "AWS Certified Solutions Architect - Associate (SAA-C03) exam voucher. Design and deploy scalable, highly available systems on AWS.",
   },
+
+  // ========== MICROSOFT AZURE ==========
   {
     _id: "voucher-2",
     id: 2,
@@ -32,22 +30,17 @@ export const vouchersData = [
     code: "AZ-104",
     logo: "microsoft",
     category: "Cloud",
-    officialPrice: 165.00,
-    youPay: 115.00,
-    discount: 30,
+    officialPrice: 165.0,
+    youPay: 115.0,
+    discount: 60,
     popular: true,
     instantDelivery: true,
-    description: "Microsoft Azure Administrator Associate (AZ-104) exam voucher. Prove your skills in managing Azure identities, governance, storage, compute and virtual networks.",
-    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
-    rating: 4.8,
-    reviewCount: 980,
-    examDetails: {
-      duration: "150 minutes",
-      questions: 60,
-      passingScore: "70%",
-      languages: ["English", "German", "Spanish", "French"]
-    }
+    guideId: "azure",
+    description:
+      "Microsoft Azure Administrator Associate (AZ-104) exam voucher. Manage and maintain Azure environments.",
   },
+
+  // ========== GOOGLE CLOUD ==========
   {
     _id: "voucher-3",
     id: 3,
@@ -56,22 +49,17 @@ export const vouchersData = [
     code: "GCP-PCA",
     logo: "google",
     category: "Cloud",
-    officialPrice: 200.00,
-    youPay: 140.00,
-    discount: 30,
+    officialPrice: 200.0,
+    youPay: 140.0,
+    discount: 60,
     popular: true,
     instantDelivery: true,
-    description: "Google Cloud Professional Cloud Architect (PCA) exam voucher. Design, develop, and manage robust, secure, scalable, highly available, and dynamic solutions on Google Cloud.",
-    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
-    rating: 4.7,
-    reviewCount: 760,
-    examDetails: {
-      duration: "120 minutes",
-      questions: 55,
-      passingScore: "70%",
-      languages: ["English", "Japanese", "Portuguese"]
-    }
+    guideId: "google",
+    description:
+      "Google Cloud Professional Cloud Architect (PCA) exam voucher. Design, develop, and manage secure, scalable solutions on GCP.",
   },
+
+  // ========== RED HAT ==========
   {
     _id: "voucher-4",
     id: 4,
@@ -80,22 +68,17 @@ export const vouchersData = [
     code: "EX200",
     logo: "redhat",
     category: "Linux",
-    officialPrice: 400.00,
-    youPay: 280.00,
-    discount: 30,
+    officialPrice: 400.0,
+    youPay: 280.0,
+    discount:60,
     popular: true,
     instantDelivery: true,
-    description: "Red Hat Certified System Administrator (EX200) exam voucher. Validate your skills in system administration, including installation, configuration, and management of Red Hat Enterprise Linux.",
-    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
-    rating: 4.6,
-    reviewCount: 540,
-    examDetails: {
-      duration: "150 minutes",
-      questions: 50,
-      passingScore: "70%",
-      languages: ["English", "Spanish", "French"]
-    }
+    guideId: "redhat",
+    description:
+      "Red Hat Certified System Administrator (EX200) exam voucher. Validate your Linux system administration skills on Red Hat Enterprise Linux.",
   },
+
+  // ========== COMPTIA ==========
   {
     _id: "voucher-5",
     id: 5,
@@ -104,23 +87,17 @@ export const vouchersData = [
     code: "SY0-701",
     logo: "comptia",
     category: "Security",
-    officialPrice: 392.00,
-    youPay: 274.00,
-    discount: 30,
+    officialPrice: 392.0,
+    youPay: 274.0,
+    discount: 60,
     popular: true,
     instantDelivery: true,
-    description: "CompTIA Security+ (SY0-701) exam voucher. Validate your baseline skills in network security, compliance, operational security, and threat management.",
-    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
-    rating: 4.9,
-    reviewCount: 2100,
-    examDetails: {
-      duration: "90 minutes",
-      questions: 90,
-      passingScore: "750/900",
-      languages: ["English", "French", "German", "Spanish"]
-    }
+    guideId: "comptia",
+    description:
+      "CompTIA Security+ (SY0-701) exam voucher. Validate your security fundamentals, threat management, and compliance skills.",
   },
-  // ===== ADDITIONAL VOUCHERS =====
+
+  // ========== CISCO ==========
   {
     _id: "voucher-6",
     id: 6,
@@ -129,94 +106,74 @@ export const vouchersData = [
     code: "200-301",
     logo: "cisco",
     category: "Networking",
-    officialPrice: 300.00,
-    youPay: 210.00,
-    discount: 30,
+    officialPrice: 300.0,
+    youPay: 210.0,
+    discount: 60,
     popular: false,
     instantDelivery: true,
-    description: "Cisco Certified Network Associate (CCNA) exam voucher. Validate your skills in network fundamentals, IP connectivity, security fundamentals, and automation.",
-    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
-    rating: 4.7,
-    reviewCount: 890,
-    examDetails: {
-      duration: "120 minutes",
-      questions: 60,
-      passingScore: "80%",
-      languages: ["English", "Japanese", "Spanish"]
-    }
+    guideId: "cisco",
+    description:
+      "Cisco Certified Network Associate (CCNA) exam voucher. Learn network fundamentals, IP connectivity, security, and automation.",
   },
+
+  // ========== DATABRICKS ==========
   {
     _id: "voucher-7",
     id: 7,
-    name: "AWS Certified Developer - Associate",
-    shortName: "AWS Developer",
-    code: "DVA-C02",
-    logo: "aws",
-    category: "Cloud",
-    officialPrice: 150.00,
-    youPay: 105.00,
-    discount: 30,
+    name: "Databricks Certified Data Engineer Associate",
+    shortName: "Databricks Data Engineer",
+    code: "DB-DEA",
+    logo: "databricks",
+    category: "Data",
+    officialPrice: 200.0,
+    youPay: 140.0,
+    discount: 60,
     popular: false,
     instantDelivery: true,
-    description: "AWS Certified Developer - Associate (DVA-C02) exam voucher. Demonstrate your ability to develop, deploy, and debug cloud-based applications on AWS.",
-    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
-    rating: 4.8,
-    reviewCount: 780,
-    examDetails: {
-      duration: "130 minutes",
-      questions: 65,
-      passingScore: "72%",
-      languages: ["English", "Japanese", "Korean"]
-    }
+    guideId: "databricks",
+    description:
+      "Databricks Certified Data Engineer Associate exam voucher. Validate processing and data pipeline engineering skills.",
   },
+
+  // ========== KUBERNETES ==========
   {
     _id: "voucher-8",
     id: 8,
-    name: "Microsoft Azure Fundamentals",
-    shortName: "Azure Fundamentals",
-    code: "AZ-900",
-    logo: "microsoft",
-    category: "Cloud",
-    officialPrice: 99.00,
-    youPay: 69.00,
-    discount: 30,
-    popular: false,
+    name: "Certified Kubernetes Administrator",
+    shortName: "CKA (Kubernetes)",
+    code: "CKA",
+    logo: "kubernetes",
+    category: "DevOps",
+    officialPrice: 395.0,
+    youPay: 276.0,
+    discount: 60,
+    popular: true,
     instantDelivery: true,
-    description: "Microsoft Azure Fundamentals (AZ-900) exam voucher. Validate your foundational knowledge of cloud services and how they are provided with Microsoft Azure.",
-    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
-    rating: 4.5,
-    reviewCount: 1500,
-    examDetails: {
-      duration: "60 minutes",
-      questions: 40,
-      passingScore: "70%",
-      languages: ["English", "German", "French", "Spanish"]
-    }
+    guideId: "kubernetes",
+    description:
+      "Certified Kubernetes Administrator (CKA) exam voucher. Demonstrate competence in Kubernetes administration and management.",
   },
+
+  // ========== VMWARE ==========
   {
     _id: "voucher-9",
     id: 9,
-    name: "Google Cloud Digital Leader",
-    shortName: "Cloud Digital Leader",
-    code: "CDL",
-    logo: "google",
-    category: "Cloud",
-    officialPrice: 200.00,
-    youPay: 140.00,
-    discount: 30,
+    name: "VMware Certified Professional - Data Center Virtualization",
+    shortName: "VMware VCP-DCV",
+    code: "2V0-21.23",
+    logo: "vmware",
+    category: "Virtualization",
+    officialPrice: 250.0,
+    youPay: 175.0,
+    discount: 60,
     popular: false,
     instantDelivery: true,
-    description: "Google Cloud Digital Leader exam voucher. Identify your ability to transform businesses with Google Cloud technology and understand cloud architecture.",
-    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
-    rating: 4.6,
-    reviewCount: 620,
-    examDetails: {
-      duration: "120 minutes",
-      questions: 50,
-      passingScore: "70%",
-      languages: ["English", "Japanese", "Spanish"]
-    }
+    guideId: "vmware",
+    description:
+      "VMware Certified Professional - Data Center Virtualization exam voucher. Demonstrate skills in vSphere environments.",
   },
+
+  // ========== COMPTIA (MORE) ==========
   {
     _id: "voucher-10",
     id: 10,
@@ -225,70 +182,299 @@ export const vouchersData = [
     code: "N10-008",
     logo: "comptia",
     category: "Networking",
-    officialPrice: 348.00,
-    youPay: 244.00,
-    discount: 30,
+    officialPrice: 348.0,
+    youPay: 244.0,
+    discount: 60,
     popular: false,
     instantDelivery: true,
-    description: "CompTIA Network+ (N10-008) exam voucher. Validate your skills in networking concepts, infrastructure, operations, security, and troubleshooting.",
-    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
-    rating: 4.7,
-    reviewCount: 1100,
-    examDetails: {
-      duration: "90 minutes",
-      questions: 90,
-      passingScore: "720/900",
-      languages: ["English", "French", "German"]
-    }
+    guideId: "comptia",
+    description:
+      "CompTIA Network+ (N10-008) exam voucher. Learn networking fundamentals, infrastructure, operations, and security.",
   },
-  // ===== BONUS: SNOWPRO =====
+  
+
+  // ========== JUNIPER ==========
   {
     _id: "voucher-11",
     id: 11,
-    name: "SnowPro Core Certification",
-    shortName: "SnowPro Core",
-    code: "COF-C02",
-    logo: null,
-    category: "Data",
-    officialPrice: 350.00,
-    youPay: 245.00,
-    discount: 30,
+    name: "Juniper Networks Certified Associate - Junos",
+    shortName: "JNCIA-Junos",
+    code: "JN0-104",
+    logo: "juniper",
+    category: "Networking",
+    officialPrice: 200.0,
+    youPay: 140.0,
+    discount: 60,
     popular: false,
     instantDelivery: true,
-    description: "SnowPro Core Certification (COF-C02) exam voucher. Validate your understanding of Snowflake architecture, account management, security, and performance.",
-    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
-    rating: 4.5,
-    reviewCount: 340,
-    examDetails: {
-      duration: "120 minutes",
-      questions: 60,
-      passingScore: "75%",
-      languages: ["English", "Japanese"]
-    }
+    guideId: "juniper",
+    description:
+      "Juniper Networks Certified Associate (JNCIA-Junos) exam voucher. Entry-level networking fundamentals for Junos OS.",
   },
-  // ===== BONUS: SALESFORCE =====
+
+  // ========== FORTINET ==========
   {
     _id: "voucher-12",
     id: 12,
+    name: "Fortinet NSE 4 - FortiOS",
+    shortName: "Fortinet NSE 4",
+    code: "NSE4",
+    logo: "fortinet",
+    category: "Security",
+    officialPrice: 400.0,
+    youPay: 280.0,
+    discount: 60,
+    popular: false,
+    instantDelivery: true,
+    guideId: "fortinet",
+    description:
+      "Fortinet NSE 4 (FortiOS) exam voucher. Validate your skills in Fortinet security solutions and network security.",
+  },
+
+  // ========== SNOWFLAKE ==========
+  {
+    _id: "voucher-13",
+    id: 13,
+    name: "SnowPro Core Certification",
+    shortName: "SnowPro Core",
+    code: "COF-C02",
+    logo: "snowflake",
+    category: "Data",
+    officialPrice: 350.0,
+    youPay: 245.0,
+    discount: 60,
+    popular: false,
+    instantDelivery: true,
+    guideId: "snowflake",
+    description:
+      "SnowPro Core Certification (COF-C02) exam voucher. Validate your understanding of Snowflake architecture, security, and performance.",
+  },
+
+  // ========== SALESFORCE ==========
+  {
+    _id: "voucher-14",
+    id: 14,
     name: "Salesforce Certified Administrator",
     shortName: "Salesforce Admin",
     code: "ADM-201",
-    logo: null,
+    logo: "salesforce",
     category: "CRM",
-    officialPrice: 250.00,
-    youPay: 175.00,
-    discount: 30,
+    officialPrice: 250.0,
+    youPay: 175.0,
+    discount: 60,
     popular: false,
     instantDelivery: true,
-    description: "Salesforce Certified Administrator (ADM-201) exam voucher. Validate your skills in Salesforce configuration, automation, and user management.",
-    features: ["100% Genuine", "Instant Delivery", "Worldwide Available", "Save 30%"],
-    rating: 4.4,
-    reviewCount: 450,
-    examDetails: {
-      duration: "120 minutes",
-      questions: 65,
-      passingScore: "65%",
-      languages: ["English", "French", "Spanish"]
-    }
-  }
+    guideId: "salesforce",
+    description:
+      "Salesforce Certified Administrator (ADM-201) exam voucher. Validate your skills in Salesforce configuration, automation, and user management.",
+  },
+
+  // ========== ORACLE ==========
+  {
+    _id: "voucher-15",
+    id: 15,
+    name: "Oracle Cloud Infrastructure Architect Associate",
+    shortName: "Oracle OCI Architect",
+    code: "1Z0-1072",
+    logo: "oracle",
+    category: "Cloud",
+    officialPrice: 245.0,
+    youPay: 170.0,
+    discount: 60,
+    popular: false,
+    instantDelivery: true,
+    guideId: "oracle",
+    description:
+      "Oracle Cloud Infrastructure Architect Associate exam voucher. Design and deploy Oracle Cloud solutions.",
+  },
+
+  // ========== SERVICENOW ==========
+  {
+    _id: "voucher-16",
+    id: 16,
+    name: "ServiceNow Certified System Administrator",
+    shortName: "ServiceNow CSA",
+    code: "CSA",
+    logo: "servicenow",
+    category: "ITSM",
+    officialPrice: 300.0,
+    youPay: 210.0,
+    discount: 60,
+    popular: false,
+    instantDelivery: true,
+    guideId: "servicenow",
+    description:
+      "ServiceNow Certified System Administrator (CSA) exam voucher. Configure, implement, and maintain ServiceNow platform.",
+  },
+
+  // ========== ALIBABA CLOUD ==========
+  {
+    _id: "voucher-17",
+    id: 17,
+    name: "Alibaba Cloud Certified Associate",
+    shortName: "Alibaba ACA",
+    code: "ACA-Cloud1",
+    logo: "alibaba",
+    category: "Cloud",
+    officialPrice: 120.0,
+    youPay: 84.0,
+    discount: 60,
+    popular: false,
+    instantDelivery: true,
+    guideId: "alibaba",
+    description:
+      "Alibaba Cloud Certified Associate exam voucher. Demonstrate basic knowledge of Alibaba Cloud core services.",
+  },
+
+  // ========== DOCKER ==========
+  {
+    _id: "voucher-18",
+    id: 18,
+    name: "Docker Certified Associate",
+    shortName: "Docker DCA",
+    code: "DCA",
+    logo: "docker",
+    category: "DevOps",
+    officialPrice: 195.0,
+    youPay: 136.0,
+    discount: 60,
+    popular: true,
+    instantDelivery: true,
+    guideId: "docker",
+    description:
+      "Docker Certified Associate (DCA) exam voucher. Validate container orchestration, image creation, and security skills.",
+  },
+
+  // ========== GIT / GITLAB ==========
+  {
+    _id: "voucher-19",
+    id: 19,
+    name: "GitLab Certified Associate",
+    shortName: "GitLab Associate",
+    code: "GL-ASSOC",
+    logo: "git",
+    category: "DevOps",
+    officialPrice: 150.0,
+    youPay: 105.0,
+    discount: 60,
+    popular: false,
+    instantDelivery: true,
+    guideId: "git",
+    description:
+      "GitLab Certified Associate exam voucher. Demonstrate proficiency in Git fundamentals, CI/CD, and DevOps workflows.",
+  },
+
+  // ========== HUAWEI ==========
+  {
+    _id: "voucher-20",
+    id: 20,
+    name: "Huawei Certified ICT Associate",
+    shortName: "Huawei HCIA",
+    code: "HCIA-Datacom",
+    logo: "huawel",
+    category: "Networking",
+    officialPrice: 200.0,
+    youPay: 140.0,
+    discount: 60,
+    popular: false,
+    instantDelivery: true,
+    guideId: "huawei",
+    description:
+      "Huawei Certified ICT Associate (HCIA) exam voucher. Master basic routing, switching, and network engineering.",
+  },
+
+  // ========== MONGODB ==========
+  {
+    _id: "voucher-21",
+    id: 21,
+    name: "MongoDB Certified Developer Associate",
+    shortName: "MongoDB Developer",
+    code: "C100DEV",
+    logo: "mongodb",
+    category: "Database",
+    officialPrice: 150.0,
+    youPay: 105.0,
+    discount: 60,
+    popular: false,
+    instantDelivery: true,
+    guideId: "mongodb",
+    description:
+      "MongoDB Certified Developer Associate exam voucher. Validate skills in building applications with MongoDB.",
+  },
+
+  // ========== NUTANIX ==========
+  {
+    _id: "voucher-22",
+    id: 22,
+    name: "Nutanix Certified Professional - Multicloud Infrastructure",
+    shortName: "Nutanix NCP-MCI",
+    code: "NCP-MCI",
+    logo: "nutanix",
+    category: "Virtualization",
+    officialPrice: 199.0,
+    youPay: 139.0,
+    discount: 60,
+    popular: false,
+    instantDelivery: true,
+    guideId: "nutanix",
+    description:
+      "Nutanix Certified Professional (NCP-MCI) exam voucher. Demonstrate ability to deploy and manage Nutanix Enterprise Cloud.",
+  },
+
+  // ========== PALO ALTO NETWORKS ==========
+  {
+    _id: "voucher-23",
+    id: 23,
+    name: "Palo Alto Networks Certified Network Security Engineer",
+    shortName: "Palo Alto PCNSE",
+    code: "PCNSE",
+    logo: "PaloAlto",
+    category: "Security",
+    officialPrice: 175.0,
+    youPay: 122.0,
+    discount: 60,
+    popular: true,
+    instantDelivery: true,
+    guideId: "paloalto",
+    description:
+      "Palo Alto Networks Certified Network Security Engineer (PCNSE) exam voucher. Demonstrate expertise in Next-Generation Firewalls.",
+  },
+
+  // ========== SAP ==========
+  {
+    _id: "voucher-24",
+    id: 24,
+    name: "SAP Certified Associate - Integration Associate",
+    shortName: "SAP Associate",
+    code: "C_CPI_15",
+    logo: "sap",
+    category: "ERP",
+    officialPrice: 250.0,
+    youPay: 175.0,
+    discount: 60,
+    popular: false,
+    instantDelivery: true,
+    guideId: "sap",
+    description:
+      "SAP Certified Application Associate exam voucher. Validate expertise in SAP Integration Suite and cloud solutions.",
+  },
+
+  // ========== IBM ==========
+  {
+    _id: "voucher-25",
+    id: 25,
+    name: "IBM Certified Solution Architect - Cloud",
+    shortName: "IBM Cloud Architect",
+    code: "C1000-118",
+    logo: "IBM",
+    category: "Cloud",
+    officialPrice: 200.0,
+    youPay: 140.0,
+    discount: 60,
+    popular: false,
+    instantDelivery: true,
+    guideId: "ibm",
+    description:
+      "IBM Certified Solution Architect - Cloud v4 exam voucher. Design, plan, and architect secure IBM Cloud solutions.",
+  },
 ];

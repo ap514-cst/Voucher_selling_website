@@ -34,6 +34,16 @@ import salesforcs from "../assets/salesforcs.png";
 import oracle from "../assets/oracle.png";
 import service from "../assets/service.png";
 
+import alibaba from "../assets/alibaba.png"
+import docker from '../assets/docker.png'
+import git from "../assets/git.png"
+import huawel from "../assets/huawel.png"
+import mongodb from "../assets/mongodb.png"
+import nutanix from "../assets/nutanix.png"
+import PaloAlto from "../assets/PaloAlto.png"
+import sap from "../assets/sap.png"
+import IBM from "../assets/IBM.png"
+
 import LogoCarousel from "../components/LogoCarousel";
 import VoucherSection from "../components/VoucherSection";
 import WhyChoose from "../components/WhyChoose";

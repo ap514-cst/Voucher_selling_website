@@ -18,7 +18,8 @@ import {
   FaShieldAlt,
   FaCheckCircle
 } from "react-icons/fa";
-import AnimatedBrand from "./AnimatedBrand";
+
+import tclogo from "../assets/tclogo.png"
 
 const Navbar = () => {
   // Dark mode state
@@ -78,7 +79,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 md:h-20">
             
-            {/* Logo */}
+            {/* Logo with imported image */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -86,7 +87,11 @@ const Navbar = () => {
               className="flex-shrink-0"
             >
               <NavLink to="/" className="block">
-                <AnimatedBrand size="medium" />
+                <img 
+                  src={tclogo} 
+                  alt="TechCyfy" 
+                  className="h-10 w-auto object-contain md:h-12" 
+                />
               </NavLink>
             </motion.div>
 
@@ -128,7 +133,7 @@ const Navbar = () => {
             {/* Right side: Accredited Badge + Dark Mode + Actions + Mobile Menu */}
             <div className="flex items-center gap-2 md:gap-3">
               
-              {/* ===== TECHCYFY ACCREDITED BADGE (Desktop) ===== */}
+              {/* Techcyfy Accredited Badge (Desktop) */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -208,7 +213,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* ===== MOBILE MENU (Full Width Dropdown) ===== */}
+        {/* Mobile Menu (Full Width Dropdown) */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -220,7 +225,7 @@ const Navbar = () => {
             >
               <div className="px-4 pt-2 pb-4 space-y-1">
                 
-                {/* ===== ACCREDITED BADGE (Mobile) ===== */}
+                {/* Accredited Badge (Mobile) */}
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}

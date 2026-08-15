@@ -1,7 +1,7 @@
 // src/components/FloatingSocialIcons.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { FaWhatsapp, FaFacebook, FaTelegramPlane } from "react-icons/fa";
 
 const FloatingSocialIcons = () => {
   // প্রতিটি আইকনের আলাদা অ্যানিমেশন ডেল ও ডিউরেশন
@@ -9,17 +9,25 @@ const FloatingSocialIcons = () => {
     {
       icon: <FaWhatsapp className="text-2xl" />,
       label: "WhatsApp",
-      href: "https://wa.me/+8801982188224?text=I want to know more about your services.", target: "_blank",
+      href: "https://wa.me/+8801982188224?text=I want to know more about your services.",
+      target: "_blank",
       color: "bg-green-500 hover:bg-green-600",
       delay: 0,
     },
-    
     {
-      icon: <FaEnvelope className="text-2xl" />,
-      label: "Email",
-      href: "mailto:apomojumder688@gmail.com",
+      icon: <FaTelegramPlane className="text-2xl" />,
+      label: "Telegram",
+      href: "https://t.me/techcyfy", // Replace with your Telegram username/link
       target: "_blank",
-      color: "bg-red-500 hover:bg-red-600",
+      color: "bg-blue-500 hover:bg-blue-600",
+      delay: 0.2,
+    },
+    {
+      icon: <FaFacebook className="text-2xl" />,
+      label: "Facebook",
+      href: "https://www.facebook.com/techcyfy24/", // Replace with your email
+      target: "_blank",
+      color: "bg-blue-500 hover:bg-blue-600",
       delay: 0.4,
     },
   ];

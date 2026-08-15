@@ -1,36 +1,19 @@
 // src/components/Footer.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import { FaStar, FaCcVisa, FaCcMastercard, FaPaypal, FaLock } from "react-icons/fa";
+import { 
+  FaStar, 
+  FaCcVisa, 
+  FaCcMastercard, 
+  FaPaypal, 
+  FaLock, 
+  FaYoutube, 
+  FaGithub 
+} from "react-icons/fa";
+import { FaTelegram } from "react-icons/fa6"; // Standard Telegram icon from react-icons/fa6
 
 const Footer = () => {
-  const reviews = [
-    {
-      name: "Michael Anderson",
-      rating: 5,
-      text: "Got my AWS SAA-C03 voucher instantly. Smooth process and great support!",
-      delay: 0,
-    },
-    {
-      name: "Sarah Thompson",
-      rating: 5,
-      text: "Best prices for Azure exams. Highly recommended Techcyfy!",
-      delay: 0.1,
-    },
-    {
-      name: "David Wilson",
-      rating: 5,
-      text: "Quick delivery and genuine voucher. Will buy again for sure.",
-      delay: 0.2,
-    },
-    {
-      name: "James Parker",
-      rating: 5,
-      text: "Great experience! Saved a lot of money on my exam.",
-      delay: 0.3,
-    },
-  ];
-
+ 
   const footerLinks = [
     "Privacy Policy",
     "Terms & Conditions",
@@ -45,6 +28,27 @@ const Footer = () => {
     { icon: <FaLock className="text-3xl text-emerald-500" />, label: "SSL Secured" },
   ];
 
+  const socialLinks = [
+    {
+      icon: <FaYoutube className="text-2xl" />,
+      label: "YouTube",
+      href: "https://youtube.com/@techtalkhq24?si=oRyUIM0VGu7mAnJU",
+      hoverColor: "text-red-600 hover:text-red-500",
+    },
+    {
+      icon: <FaGithub className="text-2xl" />,
+      label: "GitHub",
+      href: "https://github.com/techcyfy",
+      hoverColor: "hover:text-slate-200",
+    },
+    {
+      icon: <FaTelegram className="text-2xl" />,
+      label: "Telegram",
+      href: "https://t.me/techcyfy",
+      hoverColor: "text-sky-600 hover:text-sky-400",
+    },
+  ];
+
   const StarRating = ({ rating }) => (
     <div className="flex text-amber-400 text-sm">
       {[...Array(5)].map((_, i) => (
@@ -54,19 +58,15 @@ const Footer = () => {
   );
 
   return (
-    <footer className="bg-black text-white border-t border-slate-800">
- 
+    <div className="max-w-7xl mx-auto px-4">
         
         {/* ===== TRUSTED BY SECTION ===== */}
-        
-
-       
 
         {/* ===== DIVIDER ===== */}
-        <div className="border-t border-slate-800 pt-8 md:pt-10">
+        <div className="border-t border-slate-800 pt-8">
           
           {/* ===== FOOTER LINKS ===== */}
-          <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-6">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-6">
             {footerLinks.map((link, index) => (
               <a
                 key={index}
@@ -91,6 +91,22 @@ const Footer = () => {
             ))}
           </div>
 
+          {/* ===== SOCIAL MEDIA ICONS ===== */}
+          <div className="flex justify-center items-center gap-6 mb-6">
+            {socialLinks.map((social, index) => (
+              <a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className={`text-slate-400 transition-colors duration-200 ${social.hoverColor}`}
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
+
           {/* ===== COPYRIGHT ===== */}
           <div className="text-center">
             <p className="text-xs md:text-sm text-slate-500">
@@ -98,8 +114,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
-     
-    </footer>
+      </div>
   );
 };
 

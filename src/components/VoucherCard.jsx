@@ -10,18 +10,66 @@ import {
 import { HiOutlineDocumentSearch } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 
+// Local image imports
+import aws from "../assets/aws2.png";
+import google from "../assets/google.png";
+import microsoft from "../assets/mic.png";
+import redhat from "../assets/red.png";
+import cisco from "../assets/cisco.png";
+import comptia from "../assets/comptia.png";
+import databricks from "../assets/databricks.png";
+import fortinet from "../assets/Fortinet2.png";
+import kubernetes from "../assets/kubernetes.png";
+import vmware from "../assets/Vmware.png";
+import juniper from "../assets/juniper.png";
+import snowflake from "../assets/snowflake.png";
+import salesforce from "../assets/salesforcs.png";
+import oracle from "../assets/oracle.png";
+import servicenow from "../assets/service.png";
+
+import alibaba from "../assets/alibaba.png";
+import docker from "../assets/docker.png";
+import git from "../assets/git.png";
+import huawel from "../assets/huawel.png";
+import mongodb from "../assets/mongodb.png";
+import nutanix from "../assets/nutanix.png";
+import PaloAlto from "../assets/PaloAlto.png";
+import sap from "../assets/sap.png";
+import IBM from "../assets/IBM.png";
+
+// Mapped local image imports with fallback keys
 const logoMap = {
-  aws: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
-  microsoft:
-    "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg",
-  google:
-    "https://upload.wikimedia.org/wikipedia/commons/2/2d/Google-cloud-platform.svg",
-  redhat:
-    "https://upload.wikimedia.org/wikipedia/commons/3/35/Red_Hat_logo.svg",
-  comptia:
-    "https://upload.wikimedia.org/wikipedia/commons/f/f8/CompTIA_logo.svg",
-  cisco:
-    "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg",
+  aws,
+  amazon: aws,
+  google,
+  gcp: google,
+  microsoft,
+  azure: microsoft,
+  redhat,
+  cisco,
+  comptia,
+  databricks,
+  fortinet,
+  kubernetes,
+  cncf: kubernetes,
+  vmware,
+  juniper,
+  snowflake,
+  salesforce,
+  oracle,
+  servicenow,
+  alibaba,
+  alibabacloud: alibaba,
+  docker,
+  git,
+  huawel,
+  huawei: huawel,
+  mongodb,
+  mongo: mongodb,
+  nutanix,
+  paloalto: PaloAlto,
+  sap,
+  ibm: IBM,
 };
 
 const VoucherCard = ({ voucher = {}, index = 0 }) => {
