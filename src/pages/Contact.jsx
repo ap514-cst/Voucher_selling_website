@@ -23,9 +23,9 @@ const Contact = () => {
     setLoading(true);
     setStatusMessage(null);
 
-    const serviceId = "service_lm7u1fm";
-    const templateId = "template_zrdqskf";
-    const publicKey = "UhPDQK4ZN-hGHONFM";
+    const serviceId = "service_x5ijwen";
+    const templateId = "template_zarc7jr";
+    const publicKey = "ZQIkrfIh6OkQlA6nC";
 
     try {
       // Sending actual email using @emailjs/browser
