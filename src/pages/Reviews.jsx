@@ -57,7 +57,7 @@ const Reviews = () => {
       <Helmet>
         <title>Customer Reviews - Techcyfy</title>
         <meta name="description" content="Read what our customers say about Techcyfy. Share your experience and help others choose the best IT certification vouchers." />
-        <link rel="canonical" href="http://localhost:5173/reviews" />
+        <link rel="canonical" href="https://teckey.netlify.app/reviews" />
       </Helmet>
 
       <BreadcrumbSchema items={breadcrumbItems} />
