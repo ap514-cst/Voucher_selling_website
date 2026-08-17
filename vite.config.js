@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [
     react(),
     sitemap({
+      hostname: "https://techcyfy.com",
       generateRobotsTxt: false,
     }),
   ],
