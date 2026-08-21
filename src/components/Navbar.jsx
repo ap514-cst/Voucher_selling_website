@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  FaSun, 
-  FaMoon, 
   FaBars, 
   FaTimes, 
   FaHome,
@@ -13,31 +11,13 @@ import {
   FaTicketAlt,
   FaStar,
   FaEnvelope,
-  FaCog,
-  FaUser,
   FaShieldAlt,
   FaCheckCircle
 } from "react-icons/fa";
 
-import tclogo from "../assets/tclogo.png"
+import tclogo from "../assets/tclogo.png";
 
 const Navbar = () => {
-  // Dark mode state
-  const [darkMode, setDarkMode] = useState(() => {
-    const saved = localStorage.getItem("darkMode");
-    return saved ? JSON.parse(saved) : false;
-  });
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("darkMode", JSON.stringify(true));
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("darkMode", JSON.stringify(false));
-    }
-  }, [darkMode]);
-
   // Mobile menu state
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -130,65 +110,25 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* Right side: Accredited Badge + Dark Mode + Actions + Mobile Menu */}
+            {/* Right side: Accredited Badge + Mobile Menu Button */}
             <div className="flex items-center gap-2 md:gap-3">
               
-              {/* Techcyfy Accredited Badge (Desktop) */}
+              {/* Techcyfy Accredited Badge */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 group cursor-default"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 group cursor-default"
               >
                 <div className="relative">
                   <FaShieldAlt className="text-emerald-400 text-sm group-hover:scale-110 transition-transform duration-300" />
                   <FaCheckCircle className="absolute -top-1 -right-1 text-[8px] text-emerald-300" />
                 </div>
-                <span className="text-[10px] font-semibold text-emerald-400 tracking-wide uppercase whitespace-nowrap">
+                <span className="text-[10px] sm:text-xs font-semibold text-emerald-400 tracking-wide uppercase whitespace-nowrap">
                   Techcyfy Accredited
                 </span>
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               </motion.div>
-
-              {/* Dark Mode Toggle */}
-              <motion.button
-                whileTap={{ scale: 0.9 }}
-                onClick={() => setDarkMode(!darkMode)}
-                className="relative p-2.5 rounded-full bg-slate-800/50 hover:bg-slate-700/50 text-slate-300 hover:text-white transition-all duration-300 border border-slate-700/50 hover:border-slate-600"
-                aria-label="Toggle dark mode"
-              >
-                <AnimatePresence mode="wait" initial={false}>
-                  <motion.div
-                    key={darkMode ? "dark" : "light"}
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex items-center justify-center"
-                  >
-                    {darkMode ? <FaSun className="text-amber-400" /> : <FaMoon className="text-sky-400" />}
-                  </motion.div>
-                </AnimatePresence>
-              </motion.button>
-
-              {/* Desktop Action Buttons */}
-              <div className="hidden lg:flex items-center gap-2">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-4 py-2 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white text-sm font-semibold rounded-lg shadow-lg shadow-sky-500/20 hover:shadow-sky-500/40 transition-all duration-300 flex items-center gap-2"
-                >
-                  <FaUser className="text-xs" />
-                  Sign In
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-2.5 rounded-lg hover:bg-slate-800/50 text-slate-400 hover:text-white transition-colors border border-slate-700/50 hover:border-slate-600"
-                >
-                  <FaCog className="text-sm" />
-                </motion.button>
-              </div>
 
               {/* Mobile menu button */}
               <motion.button
@@ -225,23 +165,6 @@ const Navbar = () => {
             >
               <div className="px-4 pt-2 pb-4 space-y-1">
                 
-                {/* Accredited Badge (Mobile) */}
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="flex items-center gap-2 px-4 py-2.5 mb-2 rounded-xl bg-gradient-to-r from-emerald-500/10 to-green-500/10 border border-emerald-500/30"
-                >
-                  <div className="relative">
-                    <FaShieldAlt className="text-emerald-400 text-sm" />
-                    <FaCheckCircle className="absolute -top-1 -right-1 text-[8px] text-emerald-300" />
-                  </div>
-                  <span className="text-xs font-semibold text-emerald-400 tracking-wide uppercase">
-                    Techcyfy Accredited
-                  </span>
-                  <span className="ml-auto w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                </motion.div>
-
                 {/* Navigation Links */}
                 {navLinks.map((link) => (
                   <NavLink
@@ -267,31 +190,6 @@ const Navbar = () => {
                     )}
                   </NavLink>
                 ))}
-                
-                {/* Mobile Action Buttons */}
-                <div className="pt-4 mt-2 border-t border-slate-800/50 flex flex-col gap-2">
-                  <button className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white font-semibold rounded-xl transition-all duration-300">
-                    <FaUser className="text-xs" />
-                    Sign In
-                  </button>
-                  <button className="w-full flex items-center justify-center gap-2 px-4 py-3 border border-slate-700 hover:border-slate-600 text-slate-400 hover:text-white font-semibold rounded-xl transition-all duration-300">
-                    <FaCog className="text-xs" />
-                    Settings
-                  </button>
-                </div>
-
-                {/* Mobile Dark Mode Toggle */}
-                <div className="pt-3 mt-2 border-t border-slate-800/50">
-                  <button
-                    onClick={() => setDarkMode(!darkMode)}
-                    className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-slate-800/30 hover:bg-slate-800/50 transition-all duration-300"
-                  >
-                    <span className="text-slate-400 text-sm">Dark Mode</span>
-                    <span className="text-sm font-medium text-slate-300">
-                      {darkMode ? "On" : "Off"}
-                    </span>
-                  </button>
-                </div>
               </div>
             </motion.div>
           )}
