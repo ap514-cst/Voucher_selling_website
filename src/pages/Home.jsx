@@ -1,8 +1,8 @@
 // pages/Home.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import {Helmet} from "react-helmet-async"
-import BreadcrumbSchema from "../components/BreadcrumbSchema"
+import { Helmet } from "react-helmet-async";
+import BreadcrumbSchema from "../components/BreadcrumbSchema";
 import {
   FaSearch,
   FaCloud,
@@ -34,15 +34,15 @@ import salesforcs from "../assets/salesforcs.png";
 import oracle from "../assets/oracle.png";
 import service from "../assets/service.png";
 
-import alibaba from "../assets/alibaba.png"
-import docker from '../assets/docker.png'
-import git from "../assets/git.png"
-import huawel from "../assets/huawel.png"
-import mongodb from "../assets/mongodb.png"
-import nutanix from "../assets/nutanix.png"
-import PaloAlto from "../assets/PaloAlto.png"
-import sap from "../assets/sap.png"
-import IBM from "../assets/IBM.png"
+import alibaba from "../assets/alibaba.png";
+import docker from '../assets/docker.png';
+import git from "../assets/git.png";
+import huawel from "../assets/huawel.png";
+import mongodb from "../assets/mongodb.png";
+import nutanix from "../assets/nutanix.png";
+import PaloAlto from "../assets/PaloAlto.png";
+import sap from "../assets/sap.png";
+import IBM from "../assets/IBM.png";
 
 import LogoCarousel from "../components/LogoCarousel";
 import VoucherSection from "../components/VoucherSection";
@@ -71,7 +71,6 @@ const RIGHT_PARTNER_LOGOS = [
   { src: redHatLogo, alt: "Red Hat Certification", label: "Red Hat" },
 ];
 
-// Combine all partner logos to arrange in a circle around the cloud
 const ALL_PARTNER_LOGOS = [...LEFT_PARTNER_LOGOS, ...RIGHT_PARTNER_LOGOS];
 
 const TRUST_FEATURES = [
@@ -94,18 +93,12 @@ const TrustFeature = ({ icon: Icon, title, subtitle }) => (
   </div>
 );
 
-// ===== FLOATING LOGO CHIP (CIRCULAR ORBIT) =====
+// ===== FLOATING LOGO CHIP =====
 const FloatingLogo = ({ src, alt, label, index, total }) => {
-  // Calculate polar angle for equal spacing around the circle
   const angle = (index / total) * 2 * Math.PI - Math.PI / 2;
   const radiusPercent = 42;
-
-  // Convert polar coordinates to CSS percentage values
   const x = Math.cos(angle) * radiusPercent;
   const y = Math.sin(angle) * radiusPercent;
-
-
-   
 
   return (
     <div
@@ -114,7 +107,6 @@ const FloatingLogo = ({ src, alt, label, index, total }) => {
         transform: `translate(calc(-50% + ${x}cqi), calc(-50% + ${y}cqi))`,
       }}
     >
-      {/* Counter-rotate inside component so logos and labels stay upright */}
       <motion.div
         animate={{ rotate: -360 }}
         transition={{
@@ -129,9 +121,9 @@ const FloatingLogo = ({ src, alt, label, index, total }) => {
             src={src}
             alt={alt}
             className="w-full h-full object-contain rounded-full"
+            loading="lazy"
           />
         </div>
-
         <span className="text-[9px] sm:text-[10px] font-medium text-slate-300 bg-slate-900/90 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full border border-slate-700/80 whitespace-nowrap shadow-md">
           {label}
         </span>
@@ -140,20 +132,16 @@ const FloatingLogo = ({ src, alt, label, index, total }) => {
   );
 };
 
-// ===== HERO ART WITH CIRCULAR ORBIT LOGOS =====
+// ===== HERO ART =====
 const HeroArt = () => (
   <div
     className="relative w-full max-w-[320px] sm:max-w-[420px] md:max-w-[500px] aspect-square mx-auto flex items-center justify-center [container-type:inline-size]"
     aria-hidden="true"
   >
-    {/* Background Ambient Glow */}
     <div className="absolute inset-0 rounded-full bg-sky-500/15 blur-3xl" />
-
-    {/* Rotating Background Rings */}
     <div className="absolute inset-2 sm:inset-4 rounded-full border border-dashed border-sky-500/25 animate-[spin_35s_linear_infinite]" />
     <div className="absolute inset-8 sm:inset-12 rounded-full border border-dashed border-sky-400/15 animate-[spin_25s_linear_infinite_reverse]" />
 
-    {/* Globe SVG Graphic */}
     <svg viewBox="0 0 400 400" className="absolute inset-0 w-full h-full opacity-30">
       <circle cx="200" cy="200" r="150" fill="none" stroke="#38bdf8" strokeWidth="1" />
       <ellipse cx="200" cy="200" rx="150" ry="55" fill="none" stroke="#38bdf8" strokeWidth="1" />
@@ -161,7 +149,6 @@ const HeroArt = () => (
       <line x1="50" y1="200" x2="350" y2="200" stroke="#38bdf8" strokeWidth="1" />
     </svg>
 
-    {/* Center Cloud + Shield Icon */}
     <div className="relative z-10 flex items-center justify-center pointer-events-none">
       <FaCloud className="text-7xl sm:text-8xl md:text-9xl text-sky-400 drop-shadow-[0_0_30px_rgba(56,189,248,0.5)]" />
       <div className="absolute flex items-center justify-center">
@@ -170,7 +157,6 @@ const HeroArt = () => (
       </div>
     </div>
 
-    {/* Circular Orbiting Partner Logos */}
     <motion.div
       className="absolute inset-0 z-20 pointer-events-none"
       animate={{ rotate: 360 }}
@@ -194,33 +180,107 @@ const HeroArt = () => (
 
 // ===== MAIN HOME COMPONENT =====
 const Home = () => {
-  const breadcrumbItems = [
-    { name: "Home", url: "/" }
-  ];
+  const breadcrumbItems = [{ name: "Home", url: "/" }];
+
+  // ✅ JSON-LD Schema for Organization
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Techcyfy",
+    "description": "Get genuine IT certification exam vouchers at discounted prices for AWS, Microsoft, Google Cloud, CompTIA, Cisco, Red Hat and more.",
+    "url": "https://techcyfy.com",
+    "logo": "https://techcyfy.com/logo.png",
+    "sameAs": [
+      "https://www.facebook.com/techcyfy",
+      "https://twitter.com/techcyfy",
+      "https://www.linkedin.com/company/techcyfy",
+      "https://www.youtube.com/@techcyfy"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+8801982188224",
+      "contactType": "sales",
+      "availableLanguage": ["English", "Bengali"]
+    }
+  };
+
+  // ✅ JSON-LD Schema for WebSite
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Techcyfy - IT Certification Vouchers",
+    "url": "https://techcyfy.com",
+    "description": "Get genuine IT certification exam vouchers at discounted prices. Save up to 70% on AWS, Microsoft, Google Cloud, CompTIA, Cisco, Red Hat exams.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://techcyfy.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
     <>
-       <Helmet>
-        <title>Techcyfy - Get Genuine IT Certification Vouchers at Discounted Prices</title>
-        <meta name="description" content="Get genuine IT certification exam vouchers for AWS, Microsoft, Google Cloud, CompTIA, Cisco, Red Hat and more. Save up to 70% on exam vouchers." />
-        <meta name="keywords" content="IT certification vouchers, exam vouchers, AWS voucher, Microsoft voucher, CompTIA voucher" />
+      {/* ===== SEO HELMET ===== */}
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <html lang="en" />
+        <title>Techcyfy - Get Genuine IT Certification Exam Vouchers at Discounted Prices</title>
+        <meta name="title" content="Techcyfy - Genuine IT Certification Exam Vouchers | Save up to 70%" />
+        <meta name="description" content="Get genuine IT certification exam vouchers for AWS, Microsoft, Google Cloud, CompTIA, Cisco, Red Hat and more. Save up to 70% on exam vouchers. Instant delivery, secure payment." />
+        <meta name="keywords" content="IT certification vouchers, exam vouchers, AWS voucher, Microsoft Azure voucher, Google Cloud voucher, CompTIA voucher, Cisco voucher, Red Hat voucher, discount exam vouchers, genuine vouchers, instant delivery" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="author" content="Techcyfy" />
         <link rel="canonical" href="https://techcyfy.com/" />
-        
-        {/* Open Graph Tags */}
-        <meta property="og:title" content="Techcyfy - Get Genuine IT Certification Vouchers" />
-        <meta property="og:description" content="Save up to 70% on IT certification exam vouchers. Fast delivery, secure payment." />
-        <meta property="og:url" content="https://techcyfy.com/" />
+
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://techcyfy.com/" />
+        <meta property="og:title" content="Techcyfy - Genuine IT Certification Exam Vouchers | Save up to 70%" />
+        <meta property="og:description" content="Get genuine IT certification exam vouchers for AWS, Microsoft, Google Cloud, CompTIA, Cisco, Red Hat and more. Save up to 70% on exam vouchers. Instant delivery." />
+        <meta property="og:image" content="https://techcyfy.com/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Techcyfy" />
+        <meta property="og:locale" content="en_US" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://techcyfy.com/" />
+        <meta property="twitter:title" content="Techcyfy - Genuine IT Certification Exam Vouchers | Save up to 70%" />
+        <meta property="twitter:description" content="Get genuine IT certification exam vouchers for AWS, Microsoft, Google Cloud, CompTIA, Cisco, Red Hat and more. Save up to 70%." />
+        <meta property="twitter:image" content="https://techcyfy.com/og-image.jpg" />
+
+        {/* Additional SEO */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="alternate" href="https://techcyfy.com/" hrefLang="en" />
+        <link rel="alternate" href="https://techcyfy.com/bn/" hrefLang="bn" />
       </Helmet>
 
-      <BreadcrumbSchema items={breadcrumbItems}/>
+      {/* ===== JSON-LD SCHEMAS ===== */}
+      <script type="application/ld+json">
+        {JSON.stringify(organizationSchema)}
+      </script>
+      <script type="application/ld+json">
+        {JSON.stringify(websiteSchema)}
+      </script>
+
+      {/* ===== BREADCRUMB SCHEMA ===== */}
+      <BreadcrumbSchema items={breadcrumbItems} />
 
       <div className="min-h-screen bg-slate-950 text-slate-50 selection:bg-sky-500 selection:text-white">
-        {/* Hero Section */}
-        <section className="relative pt-6 sm:pt-10 pb-12 sm:pb-16 lg:pb-24 overflow-hidden">
+        
+        {/* ===== HERO SECTION ===== */}
+        <section 
+          className="relative pt-6 sm:pt-10 pb-12 sm:pb-16 lg:pb-24 overflow-hidden"
+          aria-labelledby="hero-heading"
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
 
-              {/* Left Content Column */}
+              {/* ===== LEFT CONTENT ===== */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -233,20 +293,23 @@ const Home = () => {
                   <span>Global IT Certification Vouchers</span>
                 </div>
 
-                {/* Headline */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-white">
+                {/* ✅ H1 - Main Heading */}
+                <h1 
+                  id="hero-heading"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-white"
+                >
                   Get Genuine IT Exam Vouchers at{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-300 to-emerald-400">
                     Discounted Prices
                   </span>
                 </h1>
 
-                {/* Sub-headline */}
-                <p className="text-base sm:text-lg text-emerald-400 font-semibold">
+                {/* ✅ H2 - Sub-headline */}
+                <h2 className="text-base sm:text-lg text-emerald-400 font-semibold">
                   Save Up to 70% on Official Exam Vouchers
-                </p>
+                </h2>
 
-                {/* Paragraph */}
+                {/* Description */}
                 <p className="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                   Purchase authentic exam vouchers for AWS, Microsoft, Google Cloud, CompTIA,
                   Cisco, Red Hat, and more. Instant delivery, encrypted checkout, and round-the-clock assistance.
@@ -259,13 +322,14 @@ const Home = () => {
                   ))}
                 </div>
 
-                {/* Call-to-Action Buttons */}
+                {/* CTA Buttons */}
                 <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
                   <motion.a
                     href="#vouchers"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center gap-2 px-5 py-3 bg-sky-600 hover:bg-sky-500 active:bg-sky-600 text-white text-sm font-semibold rounded-xl shadow-lg shadow-sky-600/25 transition-all duration-200"
+                    aria-label="Browse all certification exam vouchers"
                   >
                     <FaSearch className="text-xs" aria-hidden="true" />
                     <span>Browse All Vouchers</span>
@@ -278,6 +342,7 @@ const Home = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center gap-2 px-5 py-3 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-600 text-white text-sm font-semibold rounded-xl shadow-lg shadow-emerald-600/25 transition-all duration-200"
+                    aria-label="Chat on WhatsApp"
                   >
                     <FaWhatsapp className="text-base" aria-hidden="true" />
                     <span>Chat on WhatsApp</span>
@@ -290,6 +355,7 @@ const Home = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     className="inline-flex items-center gap-2 px-5 py-3 bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-sky-400 text-sm font-semibold rounded-xl transition-all duration-200"
+                    aria-label="Join Telegram"
                   >
                     <FaTelegramPlane className="text-base" aria-hidden="true" />
                     <span>Telegram</span>
@@ -308,7 +374,7 @@ const Home = () => {
                 </div>
               </motion.div>
 
-              {/* Right Graphics Column */}
+              {/* ===== RIGHT GRAPHICS ===== */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -323,6 +389,8 @@ const Home = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
                   className="mt-6 w-full max-w-sm flex items-center gap-3 p-3.5 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-slate-800 shadow-xl"
+                  role="banner"
+                  aria-label="Limited time offer banner"
                 >
                   <div className="w-10 h-10 shrink-0 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
                     <FaPercentage className="text-amber-400 text-lg" aria-hidden="true" />
@@ -340,13 +408,14 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Main Sections */}
+        {/* ===== MAIN SECTIONS ===== */}
         <LogoCarousel />
         <div id="vouchers">
           <VoucherSection />
         </div>
         <WhyChoose />
         <HowItWorks />
+        
       </div>
     </>
   );
