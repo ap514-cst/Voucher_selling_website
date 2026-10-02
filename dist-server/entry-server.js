@@ -140,7 +140,7 @@ var Navbar = () => {
 		},
 		{
 			name: "Linux Foundation",
-			path: "/blog/LinuxCertification-exam-vouchers"
+			path: "/blog/LinuxFoundation-Certification-exam-vouchers"
 		},
 		{
 			name: "F5 Certification",
@@ -1042,7 +1042,7 @@ var LogoBadge = ({ logo, size = "md" }) => {
 	});
 };
 var ProgressDots = ({ logos, activeIndex, onSelect }) => /* @__PURE__ */ jsx("div", {
-	className: "flex-shrink-0 flex gap-1.5 overflow-x-auto\r\n    max-w-[150px] md:max-w-none py-1",
+	className: "flex-shrink-0 flex gap-1.5 overflow-x-auto\n    max-w-[150px] md:max-w-none py-1",
 	role: "tablist",
 	"aria-label": "Featured brand slides",
 	children: logos.map((logo, index) => /* @__PURE__ */ jsx("button", {
@@ -1084,11 +1084,11 @@ var FeaturedBrandSlide = ({ activeIndex, currentLogo, nextLogo, onSelect }) => /
 				children: [
 					/* @__PURE__ */ jsx(LogoBadge, { logo: currentLogo }),
 					/* @__PURE__ */ jsx("span", {
-						className: "text-lg md:text-2xl font-bold\r\n            text-gray-800 dark:text-white\r\n            group-hover:text-indigo-600\r\n            dark:group-hover:text-indigo-400\r\n            transition-colors",
+						className: "text-lg md:text-2xl font-bold\n            text-gray-800 dark:text-white\n            group-hover:text-indigo-600\n            dark:group-hover:text-indigo-400\n            transition-colors",
 						children: currentLogo.name
 					}),
 					/* @__PURE__ */ jsx("span", {
-						className: "flex-shrink-0 w-2 h-2 bg-green-500\r\n            rounded-full animate-pulse",
+						className: "flex-shrink-0 w-2 h-2 bg-green-500\n            rounded-full animate-pulse",
 						"aria-hidden": "true"
 					}),
 					/* @__PURE__ */ jsxs("div", {
@@ -1121,7 +1121,7 @@ var BrandGridItem = ({ logo, onSelect }) => /* @__PURE__ */ jsxs(motion.button, 
 		y: -3
 	},
 	whileTap: { scale: .97 },
-	className: "flex items-center gap-2 px-3 py-2\r\n    rounded-xl bg-white dark:bg-gray-800\r\n    border border-gray-200 dark:border-gray-700/60\r\n    shadow-sm hover:shadow-md\r\n    hover:border-indigo-400 dark:hover:border-indigo-500\r\n    transition-all duration-300\r\n    text-left w-full cursor-pointer",
+	className: "flex items-center gap-2 px-3 py-2\n    rounded-xl bg-white dark:bg-gray-800\n    border border-gray-200 dark:border-gray-700/60\n    shadow-sm hover:shadow-md\n    hover:border-indigo-400 dark:hover:border-indigo-500\n    transition-all duration-300\n    text-left w-full cursor-pointer",
 	children: [/* @__PURE__ */ jsx(LogoBadge, {
 		logo,
 		size: "sm"
@@ -1172,12 +1172,12 @@ var LogoCarousel = ({ onSelectBrand }) => {
 				/* @__PURE__ */ jsxs("div", {
 					className: "flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 md:mb-8",
 					children: [/* @__PURE__ */ jsx(TrustpilotRating, { ...TRUSTPILOT_RATING }), /* @__PURE__ */ jsx("span", {
-						className: "text-xs font-semibold text-indigo-600\r\n            dark:text-indigo-400\r\n            bg-indigo-50 dark:bg-indigo-900/30\r\n            px-3 py-1 rounded-full",
+						className: "text-xs font-semibold text-indigo-600\n            dark:text-indigo-400\n            bg-indigo-50 dark:bg-indigo-900/30\n            px-3 py-1 rounded-full",
 						children: "FEATURED PARTNERS"
 					})]
 				}),
 				/* @__PURE__ */ jsx("div", {
-					className: "relative overflow-hidden rounded-2xl\r\n          bg-gradient-to-br from-gray-50 to-indigo-50/30\r\n          dark:from-gray-800 dark:to-indigo-900/20\r\n          p-4 md:p-6 shadow-lg",
+					className: "relative overflow-hidden rounded-2xl\n          bg-gradient-to-br from-gray-50 to-indigo-50/30\n          dark:from-gray-800 dark:to-indigo-900/20\n          p-4 md:p-6 shadow-lg",
 					onMouseEnter: pauseAutoplay,
 					onMouseLeave: resumeAutoplay,
 					onFocus: pauseAutoplay,
@@ -1186,9 +1186,9 @@ var LogoCarousel = ({ onSelectBrand }) => {
 						className: "flex items-center gap-4",
 						children: [
 							/* @__PURE__ */ jsxs("span", {
-								className: "flex-shrink-0 inline-flex items-center\r\n              gap-1.5 px-3 py-1.5\r\n              bg-indigo-600 text-white\r\n              text-xs font-bold rounded-lg",
+								className: "flex-shrink-0 inline-flex items-center\n              gap-1.5 px-3 py-1.5\n              bg-indigo-600 text-white\n              text-xs font-bold rounded-lg",
 								children: [/* @__PURE__ */ jsx("span", {
-									className: "w-1.5 h-1.5 bg-white\r\n                rounded-full animate-pulse",
+									className: "w-1.5 h-1.5 bg-white\n                rounded-full animate-pulse",
 									"aria-hidden": "true"
 								}), "NOW SHOWING"]
 							}),
@@ -1207,7 +1207,7 @@ var LogoCarousel = ({ onSelectBrand }) => {
 					})
 				}),
 				/* @__PURE__ */ jsx("div", {
-					className: "mt-6 grid grid-cols-2 sm:grid-cols-3\r\n          md:grid-cols-4 lg:grid-cols-6 gap-3",
+					className: "mt-6 grid grid-cols-2 sm:grid-cols-3\n          md:grid-cols-4 lg:grid-cols-6 gap-3",
 					children: BRAND_LOGOS.map((logo) => /* @__PURE__ */ jsx(BrandGridItem, {
 						logo,
 						onSelect: handleBrandSelect
